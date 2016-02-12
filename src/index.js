@@ -236,16 +236,17 @@ class ParallaxScrollView extends Component {
     const { viewHeight } = this.state;
     return (
       <View
-        style={{ backgroundColor: contentBackgroundColor }}
-        onLayout={e => {
-                // Adjust the bottom height so we can scroll the parallax header all the way up.
-                const { nativeEvent: { layout: { height } } } = e;
-                const footerHeight = Math.max(0, viewHeight - height - stickyHeaderHeight);
-                if (this._footerHeight !== footerHeight) {
-                  this._footerComponent.setNativeProps({ style: { height: footerHeight }});
-                  this._footerHeight = footerHeight;
-                }
-              }}>
+        style={{ backgroundColor: contentBackgroundColor }}>
+        // Removed due to issues caused with autoscrolling lists of differing heights.
+        //onLayout={e => {
+                 //Adjust the bottom height so we can scroll the parallax header all the way up.
+                //const { nativeEvent: { layout: { height } } } = e;
+                //const footerHeight = Math.max(0, viewHeight - height - stickyHeaderHeight);
+                //if (this._footerHeight !== footerHeight) {
+                  //this._footerComponent.setNativeProps({ style: { height: footerHeight }});
+                  //this._footerHeight = footerHeight;
+                //}
+              //}}>
         { children }
       </View>
     );
