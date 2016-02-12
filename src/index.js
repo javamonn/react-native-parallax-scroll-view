@@ -237,6 +237,7 @@ class ParallaxScrollView extends Component {
     return (
       <View
         style={{ backgroundColor: contentBackgroundColor }}>
+        {
         // Removed due to issues caused with autoscrolling lists of differing heights.
         //onLayout={e => {
                  //Adjust the bottom height so we can scroll the parallax header all the way up.
@@ -247,6 +248,7 @@ class ParallaxScrollView extends Component {
                   //this._footerHeight = footerHeight;
                 //}
               //}}>
+        }
         { children }
       </View>
     );
